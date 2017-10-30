@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app>
+    
+<head>
+<style> 
+@font-face {
+   font-family: myFirstFont;
+   src: url(NeutrifStudio-Bold.otf);
+}
+
+@font-face {
+   font-family: mySecondFont;
+   src: url(NeutrifStudio-RegularItalic.ttf);
+}
+
+.satu {
+   font-family: myFirstFont;
+}
+
+.dua {
+   font-family: mySecondFont;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+</head>
+<body >
+
+
+        <label>Input Your Text:</label>
+
+        <input type="text" ng-model="yourName" value="John">
+        
+        <div class="satu"> <h1>NeutrifStudio-Bold</h1></div>
+        <hr>
+        <div class="satu">
+            <h1>{{yourName}}</h1>
+            <h2>{{yourName}}</h2>
+            <h3>{{yourName}}</h3>
+            <h4>{{yourName}}</h4>
+            <h5>{{yourName}}</h5>
+            <h6>{{yourName}}</h6>
+      </div>
+
+      <div class="dua"> <h1>NeutrifStudio-RegularItalic</h1></div>
+      <hr>
+      <div class="dua">
+          <h1>{{yourName}}</h1>
+          <h2>{{yourName}}</h2>
+          <h3>{{yourName}}</h3>
+          <h4>{{yourName}}</h4>
+          <h5>{{yourName}}</h5>
+          <h6>{{yourName}}</h6>
+    </div>
+
+</body>
+</html>
