@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
     
 <head>
 <style> 
@@ -13,25 +13,78 @@
    src: url(NeutrifStudio-RegularItalic.ttf);
 }
 
+@font-face {
+   font-family: myThirdFont;
+   src: url(NeutrifStudio-Regular.otf);
+}
+
 .satu {
    font-family: myFirstFont;
+   
 }
+.coba{
+    font-family: myFirstFont;
+    font-size: 100px;
+    width: 100%;
+   height: 700px;
+   background-image: url("bg.jpg");
+   color: white;
+}
+
+
+.cobb{
+    font-family: mySecondFont;
+    font-size: 100px;
+    width: 100%;
+   height: 700px;
+   background-image: url("bg.jpg");
+   color: white;
+}
+
+
+.cobc{
+    font-family: myThirdFont;
+    font-size: 100px;
+    width: 100%;
+   height: 700px;
+   background-image: url("bg.jpg");
+   color: white;
+}
+
+.sbb{
+    margin-bottom: 80px;
+}
+
+
 
 .dua {
    font-family: mySecondFont;
 }
 </style>
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head>
 <body >
 
-
-        <label>Input Your Text:</label>
-
-        <input type="text" ng-model="yourName" value="John">
+        <div ng-app="myApp" ng-controller="myCtrl">
         
-        <div class="satu"> <h1>NeutrifStudio-Bold</h1></div>
+                <select ng-model="selectedName" ng-options="name.name for name in names"  class="sbb">
+                        <option value=""> NeutrifStudio-Regular </option>
+                </select>
+
+
+                <br />
+            
+
+                <textarea   ng-if="selectedName.id == '100'" class="coba" type="text" >Including garden tools, carpenters’ and masons’ tools, welding equipment, chainsaws, </textarea>
+                <textarea   ng-if="selectedName.id == '200'" class="cobb" type="text" >Including garden tools, carpenters’ and masons’ tools, welding equipment, chainsaws, </textarea>
+                <textarea   ng-if="selectedName.id == '300'" class="cobc" type="text" >Including garden tools, carpenters’ and masons’ tools, welding equipment, chainsaws, </textarea>
+
+
+
+        </div>
+        
+        
+        <!-- <div class="satu"> <h1>NeutrifStudio-Bold</h1></div>
         <hr>
         <div class="satu">
             <h1>{{yourName}}</h1>
@@ -51,7 +104,22 @@
           <h4>{{yourName}}</h4>
           <h5>{{yourName}}</h5>
           <h6>{{yourName}}</h6>
-    </div>
+    </div> -->
+
+<script>
+ var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.names = [
+            { name: 'NeutrifStudio-Bold', id: 100 },
+            { name: 'NeutrifStudio-RegularItalic', id: 200 },
+            { name: 'NeutrifStudio-Regular', id: 300 }
+            
+        ];
+
+        $scope.selectedName = {name: 'NeutrifStudio-Regular', id: 300};
+});
+</script>
+
 
 </body>
 </html>
